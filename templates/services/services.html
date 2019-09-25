@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+        <div class="wrap-slider">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-title home-project">
+                            <div class="breadcrumbs mgl2">
+                                <ul>
+                                    <li><a href="{% url 'index' %}">Site Name</a></li>
+                                    <li>Projects</li>
+                                </ul>
+                            </div><!-- breadcrumb -->
+
+                        </div><!-- page-title -->
+                    </div>
+                </div>
+            </div><!-- container -->
+        </div><!-- wrap-slider -->
+
+        <section class="flat-row pdtopv4 section-project">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="iso-portfolio">
+
+                            {% for service in services %}
+
+                            <div class="portfolio-item item marketing finance planning analytics">
+                                <div class="portfolio-wrap">
+                                    <div class="portfolio-thumbnail">
+                                        <a href="#"><img src='{{ service.image.url }}' alt="image"></a>
+                                    </div>
+                                    <div class="portfolio-info">
+                                        <div class="portfolio-info-wrap">
+                                            <h6 class="portfolio-title">
+                                                <a href="portfolio-single.html">{{ service.title }}</a>
+                                            </h6>
+
+                                        </div>
+                                        <div class="portfolio-info-icon">
+                                            <ul class="portfolio-link">
+                                                <li class="icon"><a class="popup-gallery" href='{{ service.image.url }}'><span><i class="fa fa-search"></i></span></a></li>
+                                                <li class="icon"><a href="{% url 'services_details' pk=service.pk %}"><span><i class="fa fa-link"></i></span></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% endfor %}
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+   {% endblock %}

@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+
+
+        <div class="wrap-slider">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-title">
+                        <div class="breadcrumbs mgl2 pd-space">
+                            <ul>
+                                <li><a href="{% url 'index' %}">Company name</a></li>
+                                <li>About Us</li>
+                            </ul>
+                        </div><!-- breadcrumb -->
+
+                    </div><!-- page-title -->
+                    </div>
+                </div>
+                    
+            </div><!-- container -->
+        </div><!-- wrap-slider -->
+
+        <section class="flat-row pdbottomv2 services-detail company">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-4">
+                        <div class="sidebar">
+
+
+
+
+                            <div class="widget widget-help">
+                                <h6>How can we help you?</h6>
+                                <p>Contact us at the Consultec WP office near-est to you or submit a business inquiry online.</p>
+                                <button class="flat-btn btn-contact">CONTACT US</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-8">
+                        <div class="post-wrap">
+                            <article class="post clearfix">
+                                <div class="featured-post">
+                                    {% if about.0.aboutImage %}
+                                    <img src="{{ about.0.aboutImage.url }}" alt="image">
+                                    {% endif %}
+                                    <br><br><br><br><br>
+                                </div><!-- /.feature-post -->
+                                <div class="content-post">
+                                    {% if about.0.section_heading_one %}
+                                    <h2 class="title-post"><a href="#">{{ about.0.section_heading_one }}</a></h2>
+                                    {% endif %}
+                                    {% if about.0.section_description_one %}
+                                    <div class="entry-excerpt"> 
+                                        <div class="entry-content-text">
+                                            {{ about.0.section_description_one }}
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="entry-excerpt company-text">
+                                        {% if about.0.section_heading_two %}
+                                        <h6 class="title"><a href="#">{{ about.0.section_heading_two }}</a></h6>
+                                        {% endif %}
+                                        {% if about.0.section_description_two %}
+                                        <p>{{ about.0.section_description_two }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="entry-excerpt company-text">
+                                        {% if about.0.section_heading_three %}
+                                        <h6 class="title"><a href="#">{{ about.0.section_heading_three }}</a></h6>
+                                        {% endif %}
+                                        {% if about.0.section_description_three %}
+                                        <p>{{ about.0.section_description_three }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="entry-excerpt company-text">
+                                        {% if about.0.section_heading_four %}
+                                        <h6 class="title"><a href="#">{{ about.0.section_heading_four }}</a></h6>
+                                        {% endif %}
+                                        {% if about.0.section_description_four %}
+                                        <p>{{ about.0.section_description_four }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="entry-excerpt company-text">
+                                        {% if about.0.section_heading_five %}
+                                        <h6 class="title"><a href="#">{{ about.0.section_heading_five }}</a></h6>
+                                        {% endif %}
+                                        {% if about.0.section_description_five %}
+                                        <p>{{ about.0.section_description_five }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="entry-excerpt company-text final">
+                                        {% if about.0.section_heading_six %}
+                                        <h6 class="title"><a href="#">{{ about.0.section_heading_six }}</a></h6>
+                                        {% endif %}
+                                        {% if about.0.section_description_six %}
+                                        <p>{{ about.0.section_description_six }}</p>
+                                        {% endif %}
+                                    </div>
+                                    <div class="video-about">
+                                        <div class="video-haft video bond-row">
+                                            <div id="bg-video">
+                                                <div class="video-section" id="video-section" data-property="{videoURL:'{{ about.0.avoutVideo }}',containment:'.video', autoplay:false}"></div>
+                                            </div>
+                                            <div id="video-controls" style="display: block;">
+                                                <a class="video-icon small fa fa-play" id="video-play" href="#"></a>
+                                            </div> 
+                                        </div>
+
+                                        <div class="two-haft wrap-box">
+                                            <h6>Frequently Asked Questions</h6>
+                                            <div class="flat-accordion">
+
+                                                {% for faq in faqs %}
+
+                                                <div class="flat-toggle">
+                                                    <div class="toggle-title active">{{ faq.question }}</div>
+                                                    <div class="toggle-content">
+                                                        <p>{{ faq.answer }}</p>
+                                                    </div>
+                                                </div><!-- /toggle -->
+
+                                                {% endfor %}
+
+
+                                            </div><!-- /.accordion -->
+                                        </div>
+
+                                    </div>
+                                </div><!-- /.content-post -->
+                            </article>                 
+                        </div><!-- /.post-wrap -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+{% endblock %}

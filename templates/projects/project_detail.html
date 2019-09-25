@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+
+          <div class="wrap-slider">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-title">
+                        <div class="breadcrumbs mgl2 pd-space">
+                            <ul>
+                                <li><a href="{% url 'projects' %}">Projects</a></li>
+                                <li>Details</li>
+                            </ul>
+                        </div><!-- breadcrumb -->
+
+                    </div><!-- page-title -->
+                    </div>
+                </div>
+
+            </div><!-- container -->
+        </div><!-- wrap-slider -->
+
+        <section class="flat-row pdbottomv2 services-detail company">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-sm-12">
+                        <div class="post-wrap">
+                            <article class="post clearfix">
+                                <div class="featured-post">
+
+                                    <img src="{{ project.image.url }}" alt="image">
+
+
+                                </div><!-- /.feature-post -->
+                                <div class="content-post">
+
+                                    <h2 style="color: #000000" class="title-post">{{ project.title }}</h2>
+
+                                    <div class="entry-excerpt">
+                                        <div class="entry-content-text">
+                                            {{ project.details }}
+                                        </div>
+                                    </div>
+
+
+                                    </div>
+                                </div><!-- /.content-post -->
+                            </article>
+                        </div><!-- /.post-wrap -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+{% endblock %}

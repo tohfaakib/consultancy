@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+
+
+
+                <div class="wrap-slider">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="page-title">
+                            <div class="breadcrumbs mgl2 pd-space2">
+                                <ul>
+                                    <li><a href="#">Shop</a></li>
+                                    <li>Contact</li>
+                                </ul>
+                            </div><!-- breadcrumb -->
+                            <div class="page-content">
+                                <span>Contact</span>
+                            </div>
+                        </div><!-- page-title -->
+                    </div>
+                </div>
+
+            </div><!-- container -->
+        </div><!-- wrap-slider -->
+
+        <section class="flat-row pdtop section-contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="flat-maps">
+                            <div id="maps" style="width: 100%; height: 520px; "></div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title-section style1">
+                            <h1 class="title">Contact With Us !</h1>
+                            <div class="sub-title">
+                                Fill out the form below to recieve a free and confidential intial consultation.
+                            </div>
+                        </div>
+                        <div class="flat-contact">
+                            <form novalidate="" class="contact-form" id="contactform" method="POST" action="{% url 'send_mail' %}">
+
+
+                                {% csrf_token %}
+
+                                <p class="col-contact contact-notes">
+                                    <input type="text" placeholder="Name" aria-required="true" size="30" value="" name="name" id="author">
+                                </p>
+                                <p class="col-contact contact-form-email">
+                                    <input type="email" placeholder="Email" size="30" value="" name="email" id="email">
+                                </p>
+                                <p class="col-contact contact-notes">
+                                    <input type="text" placeholder="Country" aria-required="true" size="30" value="" name="country" id="country">
+                                </p>
+                                <p class="col-contact contact-form-email">
+                                    <input type="text" placeholder="Subject" size="30" value="" name="subject" id="subject">
+                                </p>
+                                <p class="contact-form-contact">
+                                    <textarea class="contact-messages" tabindex="4" placeholder="Messages" name="message" required></textarea>
+                                </p>
+                                <p class="form-submit">
+                                    <button type="submit" class="flat-btn contact-submit">send message</button>
+<!--                                    <input type="submit" class="flat-btn contact-submit" value="Send Message">-->
+                                </p>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+   {% endblock %}
